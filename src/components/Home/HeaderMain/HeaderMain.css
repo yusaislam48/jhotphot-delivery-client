@@ -1,0 +1,18 @@
+.header-main {
+    height: 70vh;
+}
+.header-main h1 {
+    font-weight: 700;
+    color: white;
+}
+.color-change{
+    font-weight: 700;
+}
+.color-change:hover{
+    cursor: pointer;
+    color: tomato;
+    font-weight: 900;
+}
+.text-color{
+    color: tomato;
+}
