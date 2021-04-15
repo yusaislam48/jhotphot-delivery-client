@@ -14,8 +14,8 @@ const HeaderMain = () => {
                 
                 <div className="input-group">
                     <input placeholder='Track Your Product By ID' type="text"/>
-                    <div class="input-group-append">
-                        <button id="searchButton" type="button" class="btn btn-danger">Track</button>
+                    <div className="input-group-append">
+                        <button id="searchButton" type="button" className="btn btn-danger">Track</button>
                     </div>
                 </div>
             </div>

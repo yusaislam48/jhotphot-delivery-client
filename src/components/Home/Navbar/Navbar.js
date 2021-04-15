@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { UserContext } from '../../../App';
 
 const Navbar = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const {isSignedIn, name, email, image} = loggedInUser;
     return (
         <nav  className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
@@ -11,17 +15,29 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Home</a>
+                            <Link className="nav-link active" aria-current="page" to='/'>Home</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Features</a>
+                            <Link className="nav-link" to='#'>Services</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Pricing</a>
+                            <Link className="nav-link" to='#'>Pricing</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            <Link className="nav-link" to='/admin/dashboard'>Admin</Link>
                         </li>
+                        
+                        {
+                            isSignedIn 
+                            ?  <li className="nav-item">
+                                    <Link className="nav-link" to='/client/bookService'><h5 style={{color: "tomato"}}>{name}</h5></Link>
+                                </li>
+                            :   <li className="nav-item">
+                                    <Link to="/login">
+                                        <button type="button" className="btn btn-dark">Login</button>
+                                    </Link>
+                                </li>
+                        }
                     </ul>
                 </div>
             </div>
