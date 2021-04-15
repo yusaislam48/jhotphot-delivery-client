@@ -4,6 +4,8 @@ import './Counter.css'
 const Counter = () => {
     return (
         <div class="container">
+            <h2 className='text-center section-header'>AT A <span className='h-text-color'>GLANCE</span></h2>
+
             <div class="row">
                 <div class="four col-md-3 mb-3">
                     <div class="counter-box colored"> <i class="fa fa-thumbs-o-up"></i> <span class="counter">2147</span>

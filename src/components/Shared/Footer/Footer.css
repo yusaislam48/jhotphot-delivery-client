@@ -1,5 +1,6 @@
 .footer-area{
     background-image: url(../../../images/footer.gif);
+    background-position: center;
     background-size: cover;
 }
 
