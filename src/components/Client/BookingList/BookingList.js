@@ -7,7 +7,7 @@ const BookingList = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [bookedServices, setBookedServices] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:4000/bookedServices/${loggedInUser.email}`)
+        fetch(`https://jhotphodelivery.herokuapp.com/bookedServices/${loggedInUser.email}`)
         .then(res => res.json())
         .then(data => setBookedServices(data))
     }, [bookedServices])

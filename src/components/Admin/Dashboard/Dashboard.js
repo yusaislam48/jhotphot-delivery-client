@@ -5,7 +5,7 @@ import Table from './Table';
 const Dashboard = () => {
     const [bookedServices, setBookedServices] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:4000/bookedServices')
+        fetch('https://jhotphodelivery.herokuapp.com/bookedServices')
         .then(res => res.json())
         .then(data => setBookedServices(data))
     }, [bookedServices]);
@@ -25,6 +25,7 @@ const Dashboard = () => {
                             <th scope="col">Service</th>
                             <th scope="col">Pay With</th>
                             <th scope="col">Status</th>
+                            <th scope="col">Delete</th>
                         </tr>
                     </thead>
                     {

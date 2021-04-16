@@ -7,7 +7,7 @@ const ManageServicesTable = ({service}) => {
     const id = _id.slice(20,24)
     
     const handleDeleteBtn = () => {
-        fetch(`http://localhost:4000/deleteService/${_id}`, {
+        fetch(`https://jhotphodelivery.herokuapp.com/deleteService/${_id}`, {
         method: "DELETE"
         })
         .then(res => {

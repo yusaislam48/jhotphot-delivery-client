@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const Table = ({service}) => {
     const {_id, name, email, payingMethod, status} = service;
@@ -10,7 +12,7 @@ const Table = ({service}) => {
 
         const updateServiceData = {_id, updateStatus};
 
-        fetch('http://localhost:4000/updateService', {
+        fetch('https://jhotphodelivery.herokuapp.com/updateService', {
             method: "PATCH",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updateServiceData)
@@ -20,6 +22,18 @@ const Table = ({service}) => {
             console.log(data)
             if(data.modifiedCount == 1){
                 alert('Update Successfully!')
+            }
+        })
+    };
+
+    const handleDeleteBtn = () => {
+        fetch(`https://jhotphodelivery.herokuapp.com/deleteBookings/${_id}`, {
+        method: "DELETE"
+        })
+        .then(res => {
+            console.log(res)
+            if(res.status == 200){
+                alert('Deleted Successfully!')
             }
         })
     }
@@ -42,6 +56,9 @@ const Table = ({service}) => {
                             <option value="Ongoing">Ongoing</option>
                         </select>
                     </form>
+                    </td>
+                    <td>
+                        <button onClick={handleDeleteBtn}  className="btn btn-danger"><FontAwesomeIcon icon={faTrash} /></button>
                     </td>
                 </tr>
             </tbody>

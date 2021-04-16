@@ -19,7 +19,7 @@ const ReviewForm = () => {
         console.log(review)
         e.preventDefault();
 
-        fetch('http://localhost:4000/addReview', {
+        fetch('https://jhotphodelivery.herokuapp.com/addReview', {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(review)

@@ -9,7 +9,7 @@ const BookServiceForm = ({id}) => {
     const [nextBtn, setNextBtn] = useState(null);
     const history = useHistory();
     useEffect(()=>{
-        fetch(`http://localhost:4000/services/${id}`)
+        fetch(`https://jhotphodelivery.herokuapp.com/services/${id}`)
         .then(res => res.json())
         .then(data => setService(data[0]))
     }, [])
@@ -31,7 +31,7 @@ const BookServiceForm = ({id}) => {
         }
         console.log(bookingServiceData);
 
-        fetch('http://localhost:4000/bookingService', {
+        fetch('https://jhotphodelivery.herokuapp.com/bookingService', {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(bookingServiceData)
