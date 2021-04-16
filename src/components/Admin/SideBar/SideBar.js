@@ -32,7 +32,7 @@ const SideBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/doctor/prescriptions" className="text-white">
+                    <Link to="/admin/manageServices" className="text-white">
                         <FontAwesomeIcon icon={faCog} /> <span>Manage Services</span>
                     </Link>
                 </li>

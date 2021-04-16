@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 const Table = ({service}) => {
     const {_id, name, email, payingMethod, status} = service;
     const id = _id.slice(20, 24);
-    console.log(status)
 
     
     const handleUpdate = (e) =>{
