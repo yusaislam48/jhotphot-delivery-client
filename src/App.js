@@ -11,6 +11,9 @@ import Dashboard from './components/Admin/Dashboard/Dashboard';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import AddService from './components/Admin/AddService/AddService';
 import BookService from './components/Client/BookService/BookService';
+import StripePayment from './components/Client/StripePayment/StripePayment';
+import BookingList from './components/Client/BookingList/BookingList';
+import Review from './components/Client/Review/Review';
 export const UserContext = createContext([])
 
 export default function App() {
@@ -42,6 +45,12 @@ export default function App() {
           </Route> */}
           <Route path="/client/bookService/:serviceId">
             <BookService></BookService>
+          </Route>
+          <Route path="/client/bookingList">
+            <BookingList></BookingList>
+          </Route>
+          <Route path="/client/review">
+            <Review></Review>
           </Route>
         </Switch>
       </Router>

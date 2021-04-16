@@ -30,7 +30,7 @@ const Navbar = () => {
                         {
                             isSignedIn 
                             ?  <li className="nav-item">
-                                    <Link className="nav-link" to='/client/bookService'><h5 style={{color: "tomato"}}>{name}</h5></Link>
+                                    <Link className="nav-link" to='/client/bookingList'><h5 style={{color: "tomato"}}>{name}</h5></Link>
                                 </li>
                             :   <li className="nav-item">
                                     <Link to="/login">

@@ -1,9 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 import { UserContext } from '../../../App';
+import StripePayment from '../StripePayment/StripePayment';
 
 const BookServiceForm = ({id}) => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [service, setService] = useState([]);
+    const [nextBtn, setNextBtn] = useState(null);
+    const history = useHistory();
     useEffect(()=>{
         fetch(`http://localhost:4000/services/${id}`)
         .then(res => res.json())
@@ -11,21 +15,44 @@ const BookServiceForm = ({id}) => {
     }, [])
 
     const handleSubmit = (e) => {
-        const serviceData = {
+        setNextBtn('1');
+        e.preventDefault();
+    }
+    
+    const handlePaymentSuccess = paymentId =>{
+        const bookingServiceData = {
             name: loggedInUser.name,
             email: loggedInUser.email,
+            service: service,
+            paymentId: paymentId,
+            payingMethod: 'Stripe Card',
+            status: 'Pending',
+            date: new Date(),
         }
-        e.preventDefault();
-        console.log(serviceData)
+        console.log(bookingServiceData);
+
+        fetch('http://localhost:4000/bookingService', {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(bookingServiceData)
+        })
+        .then(res => {
+            console.log('server site res', res)
+            if(res.status == 200){
+                alert('Booked Successfully!');
+                history.push('/client/bookingList')
+            }
+        })
 
     }
     
     
 
     return (
+        <div>
         <form onSubmit={handleSubmit}>
         <div className='row mt-5'>
-            <div className='col-md-6'>
+            <div style={{display: nextBtn ? 'none' : 'block'}} className='col-md-6'>
                 <div class="mb-3">
                     <input name='name' value={loggedInUser.name} type="text" required class="form-control" placeholder="Enter Your Name..." disabled/>
                 </div>
@@ -40,6 +67,10 @@ const BookServiceForm = ({id}) => {
             </div>
         </div>
         </form>
+        <div style={{display: nextBtn ? 'block' : 'none'}}  className='pt-4'>
+            <StripePayment handlePayment={handlePaymentSuccess}></StripePayment>
+        </div>
+        </div>
     );
 };
 

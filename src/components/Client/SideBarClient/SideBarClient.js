@@ -22,12 +22,12 @@ const SideBarClient = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/admin/dashboard" className="text-white">
+                    <Link to="/client/bookingList" className="text-white">
                         <FontAwesomeIcon icon={faList} /> <span>Booking List</span> 
                     </Link>
                 </li>
                 <li>
-                    <Link to="/admin/addService" className="text-white">
+                    <Link to="/client/review" className="text-white">
                         <FontAwesomeIcon icon={faComment} /> <span>Review</span> 
                     </Link>
                 </li>
