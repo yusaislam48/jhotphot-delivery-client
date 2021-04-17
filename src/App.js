@@ -16,6 +16,7 @@ import BookingList from './components/Client/BookingList/BookingList';
 import Review from './components/Client/Review/Review';
 import ManageServices from './components/Admin/ManageServices/ManageServices';
 import MakeAdmin from './components/Admin/MakeAdmin/MakeAdmin';
+import NotFound from './components/Shared/404/NotFound';
 export const UserContext = createContext([])
 
 export default function App() {
@@ -48,18 +49,15 @@ export default function App() {
           <PrivateRoute path="/admin/makeAdmin">
             <MakeAdmin></MakeAdmin>
           </PrivateRoute>
-          {/* <Route path="/client/bookService">
+          <PrivateRoute path="/client/bookService/:serviceId">
             <BookService></BookService>
-          </Route> */}
-          <Route path="/client/bookService/:serviceId">
-            <BookService></BookService>
-          </Route>
-          <Route path="/client/bookingList">
+          </PrivateRoute>
+          <PrivateRoute path="/client/bookingList">
             <BookingList></BookingList>
-          </Route>
-          <Route path="/client/review">
+          </PrivateRoute>
+          <PrivateRoute path="/client/review">
             <Review></Review>
-          </Route>
+          </PrivateRoute>
         </Switch>
       </Router>
     </UserContext.Provider>

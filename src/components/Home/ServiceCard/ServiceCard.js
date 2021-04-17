@@ -8,7 +8,7 @@ const ServiceCard = ({service}) => {
     return (
         <div onClick={()=>history.push(`/client/bookService/${service._id}`)} className="col mb-4">
             <div className="card h-100">
-                <img src={service?.imageUrl} className="card-img-top" alt="..." />
+                <img src={service?.imageUrl} className="card-img-top service-card-img" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">{service?.name}</h5>
                     <h6 className="text-info">Service Charge: {service?.serviceCharge}৳</h6>

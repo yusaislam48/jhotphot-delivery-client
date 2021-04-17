@@ -67,7 +67,7 @@ const AddServiceForm = () => {
                         image && <p style={{color:'green'}}>Image uploaded successFully</p>
                     }
                 </div>
-                <button type='submit' className="btn btn-success">Submit</button>
+                <button type='submit' className="btn btn-success">Add Service</button>
             </div>
         </div>
         </form>

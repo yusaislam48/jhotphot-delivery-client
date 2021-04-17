@@ -2,8 +2,8 @@ import React from 'react';
 
 const BookingListCard = ({bookedService}) => {
     const {_id, name, email, paymentId, status, payingMethod} = bookedService;
-    const payID = paymentId.slice(10, 20)
-    const orderID = _id.slice(15,24);
+    const payID = paymentId.slice(10, 20);
+    
     return (
             <div class="col mb-3">
                 <div class="card h-100">
@@ -23,7 +23,7 @@ const BookingListCard = ({bookedService}) => {
                         </div>
                     </div>
                     <div class="card-body">
-                        <h6>Order Id: {orderID}</h6>
+                        <h6>Order Id: {_id}</h6>
                         <h5 class="card-title">{bookedService?.service?.name}</h5>
                         <h6 className="text-info">Service Charge: {bookedService?.service?.serviceCharge}৳</h6>
 

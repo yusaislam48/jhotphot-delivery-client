@@ -62,7 +62,8 @@ const BookServiceForm = ({id}) => {
                 <div class="mb-3">
                     <input value={service?.name} name='service' type="text" required class="form-control" placeholder="Enter Service Name..." disabled/>
                 </div>
-                <button type='submit' className="btn btn-success">Submit</button>
+                <h6 className='text-secondary'>Your service charge will be: <span className='text-danger'>{service?.serviceCharge} taka</span></h6>
+                <button type='submit' className="btn btn-success">CheckOut & Pay</button>
 
             </div>
         </div>

@@ -5,7 +5,7 @@ const MakeAdminForm = () => {
     const handleSubmit = (e) => {
         const newAdminData = {
             email: email,
-            role: 'admin',
+            role: 'Admin',
         }
         e.preventDefault();
 
@@ -23,14 +23,14 @@ const MakeAdminForm = () => {
     }
     return (
         <form onSubmit={handleSubmit}>
-            <div className='row'>
+            <div className='row mb-5'>
                 <div className='col-md-6'>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Email</label>
                         <input name='name' onChange={(e)=>setEmail(e.target.value)} type="email" required class="form-control" id="exampleFormControlInput1" placeholder="abc@email.com"/>
                     </div>
 
-                    <button type='submit' className="btn btn-success">Submit</button>
+                    <button type='submit' className="btn btn-success">Add Admin</button>
                 </div>
             </div>
         </form>
