@@ -4,11 +4,13 @@ import axios from 'axios';
 const AddServiceForm = () => {
     const [name, setName] = useState();
     const [description, setDescription] = useState();
+    const [serviceCharge, setServiceCharge] = useState();
     const [image, setImage] = useState(null);
     const handleSubmit = (e) => {
         const serviceData = {
             name: name,
             description: description,
+            serviceCharge: serviceCharge,
             imageUrl: image,
         }
         e.preventDefault();
@@ -54,6 +56,10 @@ const AddServiceForm = () => {
                 </div>
             </div>
             <div className="col-md-6">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput2" class="form-label">Price</label>
+                    <input name='serviceCharge' onChange={(e)=>setServiceCharge(e.target.value)} type="text" required class="form-control" id="exampleFormControlInput2" placeholder="Write your service charge here..."/>
+                </div>
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Add Photo <span style={{color:'tomato'}}>(Wait 10-15 sec)</span></label>
                     <input className="form-control mb-2" name="image" type="file" onChange={handleImageUpload} id='formFile'/>

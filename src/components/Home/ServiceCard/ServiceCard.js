@@ -11,6 +11,7 @@ const ServiceCard = ({service}) => {
                 <img src={service?.imageUrl} className="card-img-top" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">{service?.name}</h5>
+                    <h6 className="text-info">Service Charge: {service?.serviceCharge}৳</h6>
                     <p className="card-text">{service?.description}</p>
                 </div>
             </div>

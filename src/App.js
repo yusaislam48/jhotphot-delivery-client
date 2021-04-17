@@ -15,6 +15,7 @@ import StripePayment from './components/Client/StripePayment/StripePayment';
 import BookingList from './components/Client/BookingList/BookingList';
 import Review from './components/Client/Review/Review';
 import ManageServices from './components/Admin/ManageServices/ManageServices';
+import MakeAdmin from './components/Admin/MakeAdmin/MakeAdmin';
 export const UserContext = createContext([])
 
 export default function App() {
@@ -43,6 +44,9 @@ export default function App() {
           </PrivateRoute>
           <PrivateRoute path="/admin/manageServices">
             <ManageServices></ManageServices>
+          </PrivateRoute>
+          <PrivateRoute path="/admin/makeAdmin">
+            <MakeAdmin></MakeAdmin>
           </PrivateRoute>
           {/* <Route path="/client/bookService">
             <BookService></BookService>

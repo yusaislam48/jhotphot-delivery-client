@@ -25,6 +25,8 @@ const BookingListCard = ({bookedService}) => {
                     <div class="card-body">
                         <h6>Order Id: {orderID}</h6>
                         <h5 class="card-title">{bookedService?.service?.name}</h5>
+                        <h6 className="text-info">Service Charge: {bookedService?.service?.serviceCharge}৳</h6>
+
                         <p class="card-text">{bookedService?.service?.description}</p>
                         <small className='text-info'>{name} ( {email} )</small><br/>
                         <small className='text-secondary'>Payment Method: {payingMethod} ( {payID} )</small>
