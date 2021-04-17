@@ -4,6 +4,7 @@ import Counter from '../Counter/Counter';
 import Header from '../Header/Header';
 import Reviews from '../Reviews/Reviews';
 import Services from '../Services/Services';
+import TrackOrder from '../TrackOrder/TrackOrder';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Header></Header>
             <Services></Services>
             <Counter></Counter>
+            <TrackOrder></TrackOrder>
             <Reviews></Reviews>
             <Footer></Footer>
         </div>

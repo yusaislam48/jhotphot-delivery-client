@@ -9,7 +9,7 @@ const MakeAdminForm = () => {
         }
         e.preventDefault();
 
-        fetch('http://localhost:4000/addAdmin', {
+        fetch('https://jhotphodelivery.herokuapp.com/addAdmin', {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newAdminData)

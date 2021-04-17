@@ -11,13 +11,13 @@ const MakeAdmin = () => {
 
     const [admins, setAdmins] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:4000/admins')
+        fetch('https://jhotphodelivery.herokuapp.com/admins')
         .then(res => res.json())
         .then(data => setAdmins(data))
     }, [admins]);
         
     useEffect(()=>{
-        fetch(`http://localhost:4000/isAdmin/${loggedInUser.email}`)
+        fetch(`https://jhotphodelivery.herokuapp.com/isAdmin/${loggedInUser.email}`)
         .then(res => res.json())
         .then(data => setIsAdmin(data))
     }, [loggedInUser]);

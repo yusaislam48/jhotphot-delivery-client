@@ -5,7 +5,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 const AdminTable = ({admin}) => {
     
     const handleDeleteBtn = () => {
-        fetch(`http://localhost:4000/deleteAdmin/${admin._id}`, {
+        fetch(`https://jhotphodelivery.herokuapp.com/deleteAdmin/${admin._id}`, {
         method: "DELETE"
         })
         .then(res => {

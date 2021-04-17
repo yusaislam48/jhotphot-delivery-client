@@ -10,7 +10,7 @@ const ManageServices = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     
     useEffect(()=>{
-        fetch(`http://localhost:4000/isAdmin/${loggedInUser.email}`)
+        fetch(`https://jhotphodelivery.herokuapp.com/isAdmin/${loggedInUser.email}`)
         .then(res => res.json())
         .then(data => setIsAdmin(data))
     }, [loggedInUser]);
