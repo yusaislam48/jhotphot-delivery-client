@@ -1,14 +1,19 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
+import logo from '../../../images/logo-01.png'
 
 const Navbar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    const {isSignedIn, name, email, image} = loggedInUser;
+    const {isSignedIn, name} = loggedInUser;
     return (
-        <nav  className="navbar navbar-expand-lg navbar-light">
+        <nav style={{fontWeight:"700"}} className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">JhotPhot Delivery</a>
+                {/* <a className="navbar-brand" href="#">JhotPhot Delivery</a> */}
+                
+                <Link className="navbar-brand" to="/">
+                        <img style={{width: '210px'}} src={logo} alt=""/>
+                </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -30,7 +35,11 @@ const Navbar = () => {
                         {
                             isSignedIn 
                             ?  <li className="nav-item">
-                                    <Link className="nav-link" to='/client/bookingList'><h5 style={{color: "tomato"}}>{name}</h5></Link>
+                                    {/* <Link className="nav-link" to='/client/bookingList'><h5 style={{color: "tomato"}}>{name}</h5></Link> */}
+                                    
+                                    <Link to='/client/bookingList'>
+                                        <button type="button" className="btn btn-danger">{name}</button>
+                                    </Link>
                                 </li>
                             :   <li className="nav-item">
                                     <Link to="/login">
