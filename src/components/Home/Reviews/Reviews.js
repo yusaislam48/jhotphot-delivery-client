@@ -9,13 +9,18 @@ const Reviews = () => {
         .then(data => setReviews(data))
     }, [reviews])
     return (
-        <div style={{backgroundColor: 'tomato', paddingTop: '50px', paddingBottom: '50px'}}>
-            <div class="container review">
-                <h2 className='text-center section-header pb-3'>Customers <span style={{color:'white'}}>Review</span> </h2>
-                <div class="row">
-                    {
-                        reviews.map(review => <ReviewsCard key={review._id} review={review}></ReviewsCard>)
-                    }
+        <div className='mt-5 mb-5'>
+            <div class="container">
+                <h2 className='text-center section-header pb-3'>Customers <span style={{color:'tomato'}}>Review</span> </h2>
+
+                <div class="section-primary t-bordered">
+                    <div class="container">
+                        <div class="row testimonial-three testimonial-three--col-three">
+                            {
+                                reviews.map(review => <ReviewsCard key={review._id} review={review}></ReviewsCard>)
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,24 +1,21 @@
 import React from 'react';
 import './ReviewsCard.css'
-import img1 from '../../../images/Ellipse 3.png'
 
-const ReviewsCard = ({review}) => {
+const ReviewsCard = ({ review }) => {
     // console.log(review)
-    const {name, image, company, designation, description} = review;
+    const { name, image, company, designation, description } = review;
     return (
-        <div class="col-md-4 colum-d">
-            <div class="card card-review d-flex mx-auto">
-                <div class="card-image"> 
-                    <img class="img-fluid d-flex mx-auto review-img" src={image} /> 
+        <div className="col-md-4 testimonial-three-col">
+            <div className="testimonial-inner">
+                <div className="testimonial-image" itemProp="image">
+                    <img width="180" height="180" src={image} />
                 </div>
-                <div class="card-text review-card-text">
-                    {/* <div class="card-title review-card-title">
-                        {name}
-                    </div>  */}
-                    {description}
+                <div className="testimonial-content">
+                    <p>{description}</p>
                 </div>
-                <div class="footer"> 
-                <span id="name">{name}<br/></span> <span id="position">{designation} of <a href="#">{company}</a></span> 
+                <div className="testimonial-meta">
+                    <strong className="testimonial-name" itemProp="name">{name}</strong>
+                    <span className="testimonial-job-title" itemProp="jobTitle">{designation}</span> – <a className="testimonial-link" href="#" >{company}</a>
                 </div>
             </div>
         </div>
